@@ -1,1 +1,11 @@
-
+:root {
+  --gradient-primary-color1: #c3a1ca; /* the main gradient */
+  --gradient-primary-color2: #5567a9; /* the main gradient */
+  --gradient-secondry-color1: #26415c; /* used for form inputs*/
+  --gradient-secondry-color2: #fc00bd; /* used for form inputs*/
+  --purple-color: #a5678e; /* used for buttons*/
+  --grey: #c0b9db; /*input fill*/
+  --blue-color: #7facd6;
+  --soft-purple: #e9b7d4;
+  --dark-blue: #33539e;
+}
