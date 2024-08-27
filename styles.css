@@ -9,3 +9,12 @@
   --soft-purple: #e9b7d4;
   --dark-blue: #33539e;
 }
+.primary-gradient {
+  background: linear-gradient(to bottom, #5567a9 0%, #c3a1ca 100%);
+}
+.secondary-gradient {
+  width: 200px;
+  height: 200px;
+  border: 3px solid;
+  border-image: linear-gradient(45deg, #26415c, #fc00bd) 1; /* Apply gradient */
+}
