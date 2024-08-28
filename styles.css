@@ -12,18 +12,17 @@
 .primary-gradient {
   background: linear-gradient(
     to bottom,
-    --gradient-primary-color2 0%,
-    --gradient-primary-color1 100%
+    var(--gradient-primary-color2) 0%,
+    var(--gradient-primary-color1) 100%
   );
 }
 .secondary-gradient {
-  width: 200px;
-  height: 200px;
   border: 3px solid;
   border-image: linear-gradient(
       45deg,
-      --gradient-secondry-color1,
-      --gradient-secondry-color2
+      var(--gradient-secondry-color1),
+      var(--gradient-secondry-color2)
     )
-    1; /* Apply gradient */
+    1;
+  /* Apply gradient */
 }
