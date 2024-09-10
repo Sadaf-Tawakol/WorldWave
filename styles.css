@@ -7,12 +7,13 @@
 
 body {
   font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
+  background-color: #fffefe;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  margin: 0;
+  height: 100%;
+  margin: 10px;
+  flex-direction: column;
 }
 
 .container {
@@ -23,8 +24,8 @@ body {
   max-width: 800px;
   width: 100%;
   display: flex;
-
   flex-direction: row;
+  margin-bottom: 40px;
 }
 
 .profile-form {
@@ -104,6 +105,8 @@ textarea {
 .cancel-btn,
 .save-btn {
   padding: 10px 20px;
+  margin: auto;
+  align-items: center;
   border: 2px solid;
   border-radius: 5px;
   cursor: pointer;
@@ -141,11 +144,164 @@ textarea {
 
   .cancel-btn,
   .save-btn {
-    width: 100%;
+    width: 30%;
     margin-bottom: 10px;
   }
 
   .save-btn {
     margin-bottom: 0;
   }
+}
+
+.followers-following-container {
+  padding: 30px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  display: block;
+  box-sizing: content-box;
+  width: 80%;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.followers-following-tabs {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.tab-btn,
+.tab-btn2 {
+  padding: 10px 30px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: #333;
+  position: relative;
+}
+
+.tab-btn.active,
+.tab-btn2.active {
+  border: 2px solid transparent;
+  border-image: linear-gradient(45deg, #8e44ad, #3498db);
+  border-image-slice: 1;
+  padding: 5px 10px;
+  border-radius: 8px;
+}
+
+.search-box {
+  display: flex;
+  align-items: end;
+  margin-bottom: 20px;
+}
+.search-box2 {
+  display: flex;
+  align-items: end;
+  margin-bottom: 20px;
+}
+
+.search-box input,
+.search-box2 input {
+  border: 2px solid #ccc;
+  border-radius: 20px;
+  padding: 10px;
+  width: 180px;
+  outline: none;
+}
+
+.search-box .search-btn,
+.search-box2 .search-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: -40px;
+  display: flex;
+}
+
+.search-box .fa-search,
+.search-box2 .fa-search {
+  color: #666;
+}
+
+.followers-following-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.column {
+  width: 45%;
+}
+
+.column {
+  width: 45%;
+  margin-right: 10px;
+}
+
+.column:last-child {
+  margin-right: 0;
+}
+
+.followers-list {
+  list-style: none;
+  padding: 0;
+}
+
+.followers-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+  -ms-text-size-adjust: auto;
+  text-size-adjust: auto;
+}
+
+.followers-list li img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.follower-details {
+  flex-grow: 1;
+  padding-left: 10px;
+  font-size: small;
+}
+
+.username {
+  font-weight: bold;
+  color: #333;
+}
+
+.fullname {
+  font-size: 14px;
+  color: #888;
+}
+
+.remove-btn {
+  padding: 5px 5px;
+  background-color: transparent;
+  border: 2px solid;
+  border-image: linear-gradient(45deg, #8e44ad, #3498db);
+  border-image-slice: 1;
+  border-radius: 3px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #333;
+}
+
+.remove-btn:hover {
+  background-color: #8e44ad;
+  color: white;
+}
+
+.following-gradient {
+  background: linear-gradient(45deg, #8e44ad, #3498db);
+  height: 300px;
+  border-radius: 10px;
 }
