@@ -22,3 +22,34 @@ document
     alert("Profile Saved!");
   });
 
+document.getElementById("followers-tab").addEventListener("click", function () {
+  document.getElementById("followers-list").classList.add("active");
+  document.getElementById("following-list").classList.remove("active");
+  this.classList.add("active");
+  document.getElementById("following-tab").classList.remove("active");
+});
+
+document.getElementById("following-tab").addEventListener("click", function () {
+  document.getElementById("following-list").classList.add("active");
+  document.getElementById("followers-list").classList.remove("active");
+  this.classList.add("active");
+  document.getElementById("followers-tab").classList.remove("active");
+});
+
+document
+  .getElementById("followers-tab2")
+  .addEventListener("click", function () {
+    document.getElementById("followers-list").classList.add("active");
+    document.getElementById("following-list").classList.remove("active");
+    this.classList.add("active");
+    document.getElementById("following-tab2").classList.remove("active");
+  });
+
+document
+  .getElementById("following-tab2")
+  .addEventListener("click", function () {
+    document.getElementById("following-list").classList.add("active");
+    document.getElementById("followers-list").classList.remove("active");
+    this.classList.add("active");
+    document.getElementById("followers-tab2").classList.remove("active");
+  });
