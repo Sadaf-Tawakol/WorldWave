@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"/>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/js/bootstrap.min.js" integrity="sha512-EKWWs1ZcA2ZY9lbLISPz8aGR2+L7JVYqBAYTq5AXgBkSjRSuQEGqWx8R1zAX16KdXPaCjOCaKE8MCpU0wcHlHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+<body>
+    <!--navbar-->
+    <div class="sidebar">
+        <div class="logo">
+            <img src="images/photo_2024-08-29_19-05-57-removebg-preview.png" alt="Logo">
+        </div>
+        <ul>
+            <li> <i class="bx bx-time-five"></i> Dashboard</li>
+            <li>Theme</li>
+            <li><i  class="bx bx-color-fill"></i>   Color</li>
+            <li> <i class="bx bx-pencil"></i>  Typography</li>
+            <li> Components</li>
+            <li> <i class="bx bx-table"></i>Table</li>
+            <li> <i class="bx bx-line-chart"></i>Chart</li>
+            <li> <i class="bx bx-package"></i> Icons</li>
+        </ul>
+        <div class="pages">
+            <h4>Pages</h4>
+            <li><i class="fas fa-users"></i> Users pages</li>
+            <li><i class="fas fa-question-circle"></i> Help</li>
+        </div>
+    </div>
+    <!--end of navbar-->
+
+
+    <!--header-->
+    <div class="main-content">
+        <div class="header">
+            <input type="text" placeholder="Search...">
+            <i class="fas fa-envelope"></i>
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-user"></i>
+        </div>
+        <!--end of header-->
+
+        <!--profile-->
+        <div class="user-profile">
+            <div class="profile-card">
+                <img src="images/photo_2024-08-29_19-06-04.jpg" alt="Profile Picture">
+                <h3>Emma.shining12</h3>
+                <p><i class="bx bx-location-plus"></i>Hlin Street</p>
+                <p> <i class="bx bx-message-rounded-dots"></i>emmashining@gmail.com</p> 
+                <p><i class="bx bx-phone-call"></i>78654379</p>
+            </div>
+            <div class="user-details">
+                <h4>User Details <i style="margin-bottom: 5%;" class="fas fa-pen edit-icon"></i></h4><br>
+
+                <div class="container">
+                <div class="left">Name</div>
+                <div class="right">Emma</div>
+                </div><br>
+
+                <div class="container">
+                <div class="left">Last Name</div>
+                <div class="right">Yadin</div>
+                </div><br>
+
+                <div class="container">
+                <div class="left">Date Of Birth</div>
+                <div class="right">2/3/2006</div>
+                </div><br>
+
+                <div class="container">
+                <div class="left">Gender</div>
+                <div class="right">Female</div>
+                </div>
+            </div>
+        </div>
+        <!--end of profile-->
+          
+        <!--stats-->
+        <div class="stats">
+            <div class="stat-box">
+
+                <i class="fas fa-users icon"></i><br>
+                Followers 265
+            </div>
+            <div class="stat-box">
+                <i class="fas fa-user-friends icon"></i> <br>
+                Following: 100
+            </div>
+            <div class="stat-box">
+                <i class="fas fa-th-large icon"></i><br>
+                 Posts: 3
+            </div>
+            <div class="stat-box">
+                <i class="fas fa-bookmark icon"></i><br>
+                 Saved: 25
+
+            </div>
+        </div>
+    </div>
+    <!--end of stats-->
+</body>
+</html>
