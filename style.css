@@ -1,0 +1,152 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    margin: 0;
+    height: 100vh;
+    background-color: #f1f1f1;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #E6E6FA;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar .logo img {
+    width: 50px;
+    margin-bottom: 20px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar li {
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+}
+
+.sidebar li i {
+    margin-right: 10px;
+}
+
+.pages {
+    margin-top:5%;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2%;
+}
+
+.header input {
+    width: 50%;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+}
+
+.header i {
+    font-size: 20px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.user-profile {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+.profile-card {
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 40%;
+    text-align: center;
+}
+
+.profile-card img {
+    border-radius: 5%;
+    width: 200px;
+    margin-bottom: 10px;
+    margin-top: 5%;
+}
+
+.user-details {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 50%;
+    position: relative;
+}
+
+.user-details h4 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.edit-icon {
+    font-size: 18px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.stat-box {
+    background-color: #D8BFD8;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    flex-grow: 1;
+    margin-right: 10px;
+}
+
+.stat-box i {
+    font-size: 20px;
+    display: block;
+   
+}
+
+.stat-box:last-child {
+    margin-right: 0;
+}
+
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.left{
+    text-align: left;
+}
+
+.right{
+    text-align: right;
+}
+
+.icon{
+    margin-right: 8px;
+}
