@@ -5,30 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WorldWave</title>
 
-    <link rel="icon" href="images/logo-removebg-preview.png" />
+    <link rel="icon" href="images/Screenshot__356_-removebg-preview.png" />
 
-    <link rel="stylesheet" href="prof.css"/>
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"/>
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-</head>
+    <link rel="stylesheet" href="src/styles.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
   <body>
-    <!--logo-->
-    <div class="grid-container">
+    <div class="grid-container-prof">
       <div class="column column-1">
         <div class="sidebar">
           <div class="top">
             <div class="logo">
               <img
-                src="images/photo_2024-08-29_19-05-57-removebg-preview.png"
+                src="images/Screenshot__356_-removebg-preview.png"
                 alt="logo"
               />
               <span>WorldWave</span>
             </div>
           </div>
-          <!--end of logo-->
-
-         <!--navbar-->
-          <ul style="margin-top: 30%;">
+          <ul class="prof-sidebar">
             <li>
               <a href="" class="active-page">
                 <i class="bx bxs-home"></i>
@@ -60,8 +62,8 @@
             <li>
               <a href="">
                 <i
-                  ><img style="margin-top: 17%;"
-                    src="images/photo_2024-08-29_19-06-04.jpg"
+                  ><img
+                    src="images/user.jpg"
                     alt="profile pic"
                     class="profile"
                   />
@@ -80,8 +82,55 @@
           </ul>
         </div>
       </div>
-      <div class="column column-2"></div>
-      <div class="column column-3"></div>
+      <div class="column column2">
+        <div class="main-content">
+          <div class="top-profile">
+            <div class="prof-container">
+              <img src="images/photo_2024-08-29_19-10-04.jpg" alt="" />
+            </div>
+            <div class="flex-buttons">
+              <i class="bx bx-camera"></i>
+              <button>Edit profile</button>
+            </div>
+            <div class="sub-profile">
+              <div id="prof-id">
+                <img src="images/user.jpg" alt="user profile" />
+                <p>@emma.shining12</p>
+              </div>
+              <div class="specs-profile">
+                <p><strong>EMMA</strong></p>
+                <p>Yesterday is a history, tommorow is a mystery!</p>
+                <div>
+                  <button class="secondary-gradient">3 posts</button>
+                  <button class="secondary-gradient">365 followers</button>
+                  <button class="secondary-gradient">200 followings</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="posts">
+            <div class="lists">
+              <div>
+                <i class="bx bx-columns"></i>
+                <p>Posts</p>
+              </div>
+              <div>
+                <i class="bx bx-save"></i>
+                <p>Saved</p>
+              </div>
+              <div>
+                <i class="bx bx-tag-alt"></i>
+                <p>Tagged</p>
+              </div>
+            </div>
+            <div class="lists-1">
+              <img src="images/coffe.jfif" alt="" />
+              <img src="images/Skyline.jfif" alt="" />
+              <img src="images/runaway.jfif" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="fixed-navbar">
       <ul>
@@ -103,7 +152,7 @@
         <li>
           <a href="">
             <i
-              ><img src="images/photo_2024-08-29_19-06-04.jpg" alt="profile pic" class="profile" />
+              ><img src="images/user.jpg" alt="profile pic" class="profile" />
             </i>
           </a>
         </li>
@@ -114,60 +163,5 @@
         </li>
       </ul>
     </div>
-    <!--end of navbar-->
-
-
-    <!--header-->
-    <div class="main-content">
-        <div class="header">
-            <img src="images/photo_2024-08-29_19-10-04.jpg" alt="Header Image">
-            <button style="background-color:gray;">Edit Profile</button>
-            <i class="bx bx-camera-plus"></i>
-        </div>
-        <!--end of header-->
-
-        <!--header tex-->
-        <div class="header-text">
-            <br>
-           </div>
-   
-           <div class="profile-section">
-               <img src="images/photo_2024-08-29_19-06-04.jpg" alt="Profile Picture" class="profile-pic">
-        
-               <div class="profile-info">
-                   
-                   <h1>EMMA</h1>
-                   <p style="margin-top: 7%;">yesterday is a history, tomorrow is a mystery</p>
-               </div>
-           </div>
-   
-           <div class="stats">
-               <button>3 Posts</button>
-               <button>265 Followers</button>
-               <button>100 Following</button>
-           </div>
-        <!--end of header tex-->
-
- 
-    <!--posts-->
-    <div class="tabs">
-        <a href="#" class="active">
-            <i class="bx bx-grid"></i>
-            POSTS</a>
-        <a href="#">
-            <i class="bx bx-bookmark"></i> 
-            SAVED</a>
-        <a href="#">
-            <i class="bx bx-user-pin"></i>
-            TAGGED</a>
-    </div>
-    <div class="posts-grid">
-        <img src="images/Skyline.jfif" alt="Post 1">
-        <img src="images/runaway.jfif" alt="Post 2">
-        <img src="images/coffe.jfif" alt="Post 3">
-    </div>
-</div>
-<!--end of posts-->
-
   </body>
 </html>
