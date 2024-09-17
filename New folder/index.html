@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/js/bootstrap.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      crossorigin="anonymous"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body class="light-mode">
+    <div class="container">
+      <div class="sidebar">
+        <div class="logo">
+          <img
+            src="photo_2024-08-29_19-05-57-removebg-preview.png"
+            alt="Logo"
+          />
+        </div>
+        <ul>
+          <li><i class="bx bx-time-five"></i> Dashboard</li>
+          <li class="bs">Theme</li>
+          <li><i class="bx bx-color-fill"></i> Color</li>
+          <li><i class="bx bx-pencil"></i> Typography</li>
+          <li class="bs">Components</li>
+          <li><i class="bx bx-table"></i>Table</li>
+          <li><i class="bx bx-line-chart"></i>Chart</li>
+          <li><i class="bx bx-package"></i> Icons</li>
+          <li class="bs">Pages</li>
+          <li><i class="fas fa-users"></i> Users pages</li>
+          <li><i class="fas fa-question-circle"></i> Help</li>
+        </ul>
+      </div>
+      <div class="main-content">
+        <header class="header">
+          <div class="menu-icon">
+            <a href="#" class="icon" id="menuToggle"
+              ><i class="fa fa-bars"></i
+            >
+            <div id="menuDropdown" class="menu-dropdown hidden">
+              <a href="#" class="menu-item"
+                ><i class="fa fa-user-plus"></i> Add Account</a
+              >
+              <a href="#" class="menu-item"
+                ><i class="fa fa-sign-out"></i> Log Out</a
+              >
+              <a href="#" class="menu-item"
+                ><i class="fa fa-tachometer"></i> New Dashboard</a
+              ></a>
+            </div>
+          </div>
+          <div class="nav-links">
+            <a href="#" class="nav-item">Dashboard</a>
+            <a href="#" class="nav-item">Users</a>
+          </div>
+          <div class="right-icons">
+            <a href="#" class="icon"><i class="fa fa-envelope"></i></a>
+            <a href="#" class="icon" id="themeToggle"
+              ><i id="themeIcon" class="fa fa-moon"></i
+            ></a>
+            <a href="#" class="icon"><i class="fa fa-user"></i></a>
+          </div>
+        </header>
+        <div class="sub-header">
+          <a href="#" class="sub-item">Home</a>
+          <a href="#" class="sub-item">Dashboard</a>
+        </div>
+        <div class="card-container">
+          <div class="card purple">
+            <h3>10K</h3>
+            <p>Users</p>
+            <canvas id="chart1"></canvas>
+          </div>
+          <div class="card pink">
+            <h3>$7.00</h3>
+            <p>Income</p>
+            <canvas id="chart2"></canvas>
+          </div>
+          <div class="card violet">
+            <h3>2100</h3>
+            <p>Posts</p>
+            <canvas id="chart3"></canvas>
+          </div>
+          <div class="card blue">
+            <h3>7310</h3>
+            <p>Total Connections</p>
+            <canvas id="chart4"></canvas>
+          </div>
+        </div>
+        <div class="row-four">
+          <div class="main-graph">
+            <canvas id="mainChart"></canvas>
+
+            <div class="user-stats">
+              <div class="stat">
+                <i class="fas fa-thumbs-up"></i>
+                <span>like</span>
+                <div
+                  class="progress-bar"
+                  style="background-color: #2a5ca8; width: 70%"
+                ></div>
+              </div>
+              <div class="stat">
+                <i class="fas fa-comment"></i>
+                <span>Comment</span>
+                <div
+                  class="progress-bar"
+                  style="background-color: #a86e91; width: 50%"
+                ></div>
+              </div>
+              <div class="stat">
+                <i class="fas fa-share"></i>
+                <span>Share</span>
+                <div
+                  class="progress-bar"
+                  style="background-color: #6a91c9; width: 60%"
+                ></div>
+              </div>
+              <div class="stat">
+                <i class="fas fa-bookmark"></i>
+                <span>Save</span>
+                <div
+                  class="progress-bar"
+                  style="background-color: #ab86ab; width: 40%"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
