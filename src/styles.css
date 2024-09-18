@@ -122,7 +122,7 @@ ul {
 }
 .grid-container {
   display: grid;
-  grid-template-columns: 270px 2fr 300px;
+  grid-template-columns: 270px 1fr 300px;
 }
 
 .tooltip {
@@ -142,6 +142,7 @@ ul {
   bottom: 0;
   left: 0;
   right: 0;
+  width: 100%;
   opacity: 0;
 }
 .column-3 {
@@ -197,6 +198,8 @@ ul {
   align-items: center;
   gap: 20px;
   height: 58px;
+  width: 80%;
+  margin: 0 auto;
   margin-top: 10px !important;
 }
 .carousel {
@@ -426,5 +429,9 @@ ul {
   }
   .sub-profile .specs-profile {
     margin: 0 0 0 20px;
+  }
+  .img-area img {
+    width: 30px;
+    height: 30px;
   }
 }
