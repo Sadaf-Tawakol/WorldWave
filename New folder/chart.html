@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/js/bootstrap.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      crossorigin="anonymous"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body class="light-mode">
+    <div class="container">
+      <div class="sidebar">
+        <div class="logo">
+          <img
+            src="photo_2024-08-29_19-05-57-removebg-preview.png"
+            alt="Logo"
+          />
+        </div>
+        <ul>
+            <li><a href="index.html"><i class="bx bx-time-five"></i> Dashboard</a></li>
+            <li class="bs">Theme</li>
+            <li><a href="#"><i class="bx bx-color-fill"></i> Color</a></li>
+            <li><a href="#"><i class="bx bx-pencil"></i> Typography</a></li>
+            <li class="bs">Components</li>
+            <li><a href="#"><i class="bx bx-table"></i> Table</a></li>
+            <li><a href="chart.html"><i class="bx bx-line-chart"></i> Chart</a></li>
+            <li><a href="#"><i class="bx bx-package"></i> Icons</a></li>
+            <li class="bs">Pages</li>
+            <li><a href="#"><i class="fas fa-users"></i> User pages</a></li>
+            <li><a href="#"><i class="fas fa-question-circle"></i> Help</a></li>
+          </ul>
+      </div>
+      <div class="main-content">
+        <header class="header">
+          <div class="menu-icon">
+            <a href="#" class="icon" id="menuToggle"
+              ><i class="fa fa-bars"></i
+            >
+            <div id="menuDropdown" class="menu-dropdown hidden">
+              <a href="#" class="menu-item"
+                ><i class="fa fa-user-plus"></i> Add Account</a
+              >
+              <a href="#" class="menu-item"
+                ><i class="fa fa-sign-out"></i> Log Out</a
+              >
+              <a href="#" class="menu-item"
+                ><i class="fa fa-tachometer"></i> New Dashboard</a
+              ></a>
+            </div>
+          </div>
+          <div class="nav-links">
+            <a href="index.html" class="nav-item">Dashboard</a>
+            <a href="#" class="nav-item">Users</a>
+          </div>
+          <div class="right-icons">
+            <a href="#" class="icon"><i class="fa fa-envelope"></i></a>
+            <a href="#" class="icon" id="themeToggle"
+              ><i id="themeIcon" class="fa fa-moon"></i
+            ></a>
+            <a href="#" class="icon"><i class="fa fa-user"></i></a>
+          </div>
+        </header>
+        <div class="sub-header">
+          <a href="#" class="sub-item">Home</a>
+          <a href="index.html" class="sub-item">Dashboard</a>
+        </div>
+        <div class="card-container2">
+            <div class="card2 purple">
+              <h3>10K</h3>
+              <p>Users</p>
+              <canvas id="chart1"></canvas>
+            </div>
+            <div class="card2 pink">
+              <h3>$7.00</h3>
+              <p>Income</p>
+              <canvas id="chart2"></canvas>
+            </div>
+            <div class="card2 violet">
+              <h3>2100</h3>
+              <p>Posts</p>
+              <canvas id="chart3"></canvas>
+            </div>
+            <div class="card2 blue">
+              <h3>7310</h3>
+              <p>Total Connections</p>
+              <canvas id="chart4"></canvas>
+            </div>
+          </div>
+
+          <script src="chart.js">
+          </script>
+        </body>
+      </html>
