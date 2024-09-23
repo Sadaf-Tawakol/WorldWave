@@ -22,34 +22,29 @@ document
     alert("Profile Saved!");
   });
 
-document.getElementById("followers-tab").addEventListener("click", function () {
-  document.getElementById("followers-list").classList.add("active");
-  document.getElementById("following-list").classList.remove("active");
-  this.classList.add("active");
-  document.getElementById("following-tab").classList.remove("active");
-});
+//follower-following section
 
-document.getElementById("following-tab").addEventListener("click", function () {
-  document.getElementById("following-list").classList.add("active");
-  document.getElementById("followers-list").classList.remove("active");
-  this.classList.add("active");
-  document.getElementById("followers-tab").classList.remove("active");
-});
+document.addEventListener("DOMContentLoaded", function () {
+  var followersTab = document.getElementById("followers-tab");
+  var followingTab = document.getElementById("following-tab");
 
-document
-  .getElementById("followers-tab2")
-  .addEventListener("click", function () {
-    document.getElementById("followers-list").classList.add("active");
-    document.getElementById("following-list").classList.remove("active");
-    this.classList.add("active");
-    document.getElementById("following-tab2").classList.remove("active");
+  var followersCover = document.querySelector(".followers-gradient-cover");
+  var followingCover = document.querySelector(".following-gradient-cover");
+
+  followingCover.style.display = "block";
+  followersCover.style.display = "none";
+
+  followersTab.addEventListener("click", function () {
+    followersCover.style.display = "none";
+    followingCover.style.display = "block";
+    followersTab.classList.add("active");
+    followingTab.classList.remove("active");
   });
 
-document
-  .getElementById("following-tab2")
-  .addEventListener("click", function () {
-    document.getElementById("following-list").classList.add("active");
-    document.getElementById("followers-list").classList.remove("active");
-    this.classList.add("active");
-    document.getElementById("followers-tab2").classList.remove("active");
+  followingTab.addEventListener("click", function () {
+    followersCover.style.display = "block";
+    followingCover.style.display = "none";
+    followingTab.classList.add("active");
+    followersTab.classList.remove("active");
   });
+});
