@@ -90,7 +90,7 @@ body {
 }
 
 .sidebar h2 {
-  color: #333;
+  color: #a09f9f;
 }
 
 .sidebar ul {
@@ -198,7 +198,12 @@ body {
   justify-content: space-between;
   flex-wrap: wrap;
 }
-
+.card-container2 {
+  display: flex;
+  margin-top: 10px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
 .card {
   width: 22%;
   padding: 10px;
@@ -206,6 +211,23 @@ body {
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), inset 0 4px 6px rgba(0, 0, 0, 0.2);
   transition: width 0.3s ease;
+}
+.card2 {
+  width: 45%;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), inset 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: width 0.3s ease;
+  margin: 20px 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card2 canvas {
+  width: 100% !important;
+  height: 50vh !important;
+  flex-grow: 1;
 }
 
 .purple {
@@ -285,6 +307,15 @@ body {
     width: 35%;
     margin-bottom: 20px;
   }
+  .card-container2 {
+    display: block;
+    width: auto;
+  }
+
+  .card2 {
+    width: 85%;
+    margin-bottom: 20px;
+  }
 
   .main-graph {
     width: 100%;
@@ -315,11 +346,11 @@ body {
 }
 
 @media (max-width: 480px) {
-  .card h3 {
+  .card h3 .card2 h3 {
     font-size: 16px;
   }
 
-  .card p {
+  .card p .card2 p {
     font-size: 13px;
   }
 
