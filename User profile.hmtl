@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>user profile</title>
+        <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  transition: background-color 0.5s, color 0.5s;
+}
+
+.light-mode {
+  background-color: #fff;
+  color: black;
+}
+
+.light-mode .nav-item,
+.light-mode .sub-item,
+.light-mode .icon {
+  color: black;
+}
+
+.dark-mode {
+  background-color: #000;
+  color: white;
+}
+
+.dark-mode .nav-item,
+.dark-mode .sub-item,
+.dark-mode .icon {
+  color: white;
+}
+
+.menu-dropdown {
+  position: absolute;
+  top: 50px;
+  flex-grow: 2;
+  left: 25%;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  width: 150px;
+  display: none;
+  z-index: 1000;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.menu-dropdown a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: black;
+}
+
+.menu-dropdown a:hover {
+  background-color: #f1f1f1;
+}
+
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: block;
+}
+
+.container {
+  display: flex;
+}
+
+.sidebar {
+  width: 250px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #c5c5c5;
+  margin-left: 10px;
+  height: 100vh;
+}
+
+.sidebar .logo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.sidebar .logo img {
+  width: 50px;
+  margin-right: 20px;
+}
+
+.sidebar h2 {
+  color: #333;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.sidebar ul li a i {
+  margin-right: 10px;
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 20px;
+}
+
+.user-icons {
+  margin-left: 20px;
+  margin-right: 10px;
+}
+
+.bs {
+  font: bold;
+  color: #535252;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+.menu-icon span {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.nav-links {
+  display: flex;
+}
+
+.nav-item {
+  margin-right: 20px;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+.nav-item:hover {
+  text-decoration: underline;
+}
+
+.right-icons {
+  display: flex;
+  align-items: flex-start;
+}
+
+.icon {
+  margin-left: 20px;
+  font-size: 18px;
+  color: black;
+  text-decoration: none;
+}
+
+.sub-header {
+  padding: 10px 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+.sub-item {
+  margin-right: 20px;
+  text-decoration: none;
+  color: #007bff;
+}
+
+.sub-item:hover {
+  text-decoration: underline;
+}
+
+.breadcrumbs {
+  margin-bottom: 20px;
+}
+
+.card-container {
+  display: flex;
+  margin-top: 10px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 22%;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), inset 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: width 0.3s ease;
+}
+
+.purple {
+  background-color: #dec7f7;
+}
+
+.pink {
+  background-color: #fa9ed4;
+}
+
+.violet {
+  background-color: #bec9fd;
+}
+
+.blue {
+  background-color: #f5c4d0;
+}
+
+.main-graph {
+  width: 70%;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  margin-top: 20px;
+  margin-right: 70px;
+  flex: 2;
+}
+
+.user-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 100px;
+  margin-left: 60px;
+  flex: 1;
+}
+
+.stat {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+
+.stat i {
+  font-size: 20px;
+  margin-right: 8px;
+}
+
+.stat span {
+  width: 80px;
+}
+
+.progress-bar {
+  height: 8px;
+  width: 100%;
+  border-radius: 4px;
+  margin-left: 10px;
+  margin-right: 0;
+  position: relative;
+}
+
+.progress-bar::before {
+  content: "";
+  display: flex;
+  height: 100%;
+  background-color: inherit;
+  border-radius: 4px;
+}
+.card {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    padding: 30px;
+    width: 200px;
+    font-size: 16px;
+    margin-top: 40px;
+    margin-left: 40px;
+}
+
+.profile-img {
+    border-radius: 10px;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+h2 {
+    margin: 10px 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.info p {
+    margin: 5px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+
+.info p i {
+    margin-right: 8px;
+}
+
+.fas {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+}
+.details-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    margin-left: 400px;
+    width: 300px;
+    display: flex;
+}
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.card-header h3 {
+    font-size: 18px;
+    margin: 0;
+}
+
+.edit-icon {
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.user-details {
+    font-size: 14px;
+}
+
+.detail-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.detail-item p {
+    margin: 0;
+}
+.stats-container {
+    display: flex;
+    gap: 30px; 
+    margin-left: 100px;
+}
+.stat-box {
+    background-color: #d8cbed; 
+    border-radius: 10px;
+    width: 150px;
+    height: 100px;
+    text-align: center;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.stat-box i {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.stat-box p {
+    font-size: 14px;
+    margin: 0;
+    font-weight: bold;
+}
+
+.stat-box span {
+    margin-top: 5px;
+    font-size: 18px;
+    font-weight: bold;
+}
+.main {
+  display: flex;
+}
+/* Add responsiveness */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 180px;
+    font-size: 14px;
+  }
+
+  .card-container {
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .card {
+    width: 45%;
+    margin-bottom: 20px;
+  }
+
+  .main-graph {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .user-stats {
+    margin-left: 30px;
+    width: 100%;
+  }
+
+  .header, .breadcrumbs {
+    font-size: 14px;
+  }
+
+  .details-card {
+    width: 100%;
+  }
+
+  .stats-container {
+    display: block;
+    gap: 15px;
+    margin-left: 0;
+  }
+
+  .stat-box {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    display: none; 
+  }
+
+  .main-content {
+    margin-left: 0;
+  }
+
+  .card {
+    width: 80%;
+    margin: 20px auto;
+  }
+
+  .details-card {
+    width: 90%;
+    margin: 20px auto;
+  }
+
+  .stats-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .stat-box {
+    width: 90%;
+    margin: 10px 0;
+  }
+
+  .user-stats {
+    width: 100%;
+    margin: 20px auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .card, .details-card, .stats-container, .stat-box {
+    width: 95%;
+    margin-left: 10px;
+  }
+
+  .card img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .details-card {
+    width: 100%;
+  }
+
+  .stat-box {
+    width: 100%;
+  }
+
+  .profile-img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .header {
+    font-size: 12px;
+  }
+}
+
+    </style>
+  <body class="light-mode">
+    <div class="container">
+      <div class="sidebar">
+        <div class="logo">
+          <img
+            src="Logo.png.png"
+            alt="Logo"
+          />
+        </div>
+        <ul>
+          <li><i class="bx bx-time-five"></i> Dashboard</li>
+          <li class="bs">Theme</li>
+          <li><i class="bx bx-color-fill"></i> Color</li>
+          <li><i class="bx bx-pencil"></i> Typography</li>
+          <li class="bs">Components</li>
+          <li><i class="bx bx-table"></i>Table</li>
+          <li><i class="bx bx-line-chart"></i>Chart</li>
+          <li><i class="bx bx-package"></i> Icons</li>
+          <li class="bs">Pages</li>
+          <li><i class="fas fa-users"></i> Users pages</li>
+          <li><i class="fas fa-question-circle"></i> Help</li>
+        </ul>
+      </div>
+      <div class="main-content">
+        <header class="header">
+          <div class="menu-icon">
+            <a href="#" class="icon" id="menuToggle"
+              ><i class="fa fa-bars"></i
+            >
+            <div id="menuDropdown" class="menu-dropdown hidden">
+              <a href="#" class="menu-item"
+                ><i class="fa fa-user-plus"></i> Add Account</a
+              >
+              <a href="#" class="menu-item"
+                ><i class="fa fa-sign-out"></i> Log Out</a
+              >
+              <a href="#" class="menu-item"
+                ><i class="fa fa-tachometer"></i> New Dashboard</a
+              ></a>
+            </div>
+          </div>
+          <div class="right-icons">
+            <a href="#" class="icon"><i class="fa fa-envelope"></i></a>
+            <a href="#" class="icon" id="themeToggle"
+              ><i id="themeIcon" class="fa fa-moon"></i
+            ></a>
+            <a href="#" class="icon"><i class="fa fa-user"></i></a>
+          </div>
+        </header>
+        <div class="sub-header">
+          <a href="#" class="sub-item">User Profile</a>
+        </div>
+        <div class="card">
+          <img src="profile.png" alt="Profile Image" class="profile-img">
+          <h2>Emma.shining12</h2>
+          <div class="info">
+              <p><i class="fas fa-map-marker-alt"></i> Hlin Street</p>
+              <p><i class="fas fa-envelope"></i> emmashining@gmail.com</p>
+              <p><i class="fas fa-phone-alt"></i> 78654379</p>
+          </div>
+      </div>
+      <div class="details-card">
+        <div class="card-header">
+            <h3>user details</h3>
+            <i class="fas fa-edit edit-icon"></i>
+        </div>
+        <div class="user-details">
+            <div class="detail-item">
+                <p>Name</p>
+                <p>Emma</p>
+            </div>
+            <div class="detail-item">
+                <p>Last Name</p>
+                <p>Yadin</p>
+            </div>
+            <div class="detail-item">
+                <p>Date of Birth</p>
+                <p>2/3/2006</p>
+            </div>
+            <div class="detail-item">
+                <p>Gender</p>
+                <p>Female</p>
+            </div>
+        </div>
+    </div>
+    <div class="stats-container">
+      <div class="stat-box">
+          <i class="fas fa-user"></i>
+          <p>Followers</p>
+          <span>265</span>
+      </div>
+      <div class="stat-box">
+          <i class="fas fa-user-friends"></i>
+          <p>Following</p>
+          <span>100</span>
+      </div>
+      <div class="stat-box">
+          <i class="fas fa-th"></i>
+          <p>Posts</p>
+          <span>3</span>
+      </div>
+      <div class="stat-box">
+          <i class="fas fa-bookmark"></i>
+          <p>Saved</p>
+          <span>25</span>
+      </div>
+  </div>
+</body>
+    <script>
+        const toggleMenu = () => {
+  const menu = document.querySelector(".menu-icon");
+  menu.classList.toggle("active");
+};
+
+const themeToggle = document.getElementById("themeToggle");
+const body = document.body;
+const themeIcon = document.getElementById("themeIcon");
+
+themeToggle.addEventListener("click", function () {
+  body.classList.toggle("dark-mode");
+  body.classList.toggle("light-mode");
+
+  // تغییر آیکون بین حالت روز و شب
+  if (body.classList.contains("dark-mode")) {
+    themeIcon.classList.remove("fa-moon");
+    themeIcon.classList.add("fa-sun");
+  } else {
+    themeIcon.classList.remove("fa-sun");
+    themeIcon.classList.add("fa-moon");
+  }
+});
+
+const menuToggle = document.getElementById("menuToggle");
+const menuDropdown = document.getElementById("menuDropdown");
+
+menuToggle.addEventListener("click", function () {
+  menuDropdown.classList.toggle("visible");
+  menuDropdown.classList.toggle("hidden");
+});
+
+const ctx1 = document.getElementById("chart1").getContext("2d");
+const ctx2 = document.getElementById("chart2").getContext("2d");
+const ctx3 = document.getElementById("chart3").getContext("2d");
+const ctx4 = document.getElementById("chart4").getContext("2d");
+const ctxMain = document.getElementById("mainChart").getContext("2d");
+
+const chartConfig = {
+  type: "line",
+  data: {
+    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+    datasets: [
+      {
+        label: "Activity",
+        data: [30, 50, 40, 60, 80, 70],
+        borderColor: "rgba(75, 192, 192, 1)",
+        borderWidth: 2,
+        fill: false,
+      },
+    ],
+  },
+};
+const chartConfig2 = {
+  type: "bar",
+  data: {
+    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+    datasets: [
+      {
+        label: "Activity",
+        data: [30, 50, 40, 60, 80, 70],
+        borderColor: "rgba(75, 192, 192, 1)",
+        borderWidth: 2,
+        fill: false,
+      },
+    ],
+  },
+};
+
+new Chart(ctx1, chartConfig2);
+new Chart(ctx2, chartConfig);
+new Chart(ctx3, chartConfig);
+new Chart(ctx4, chartConfig);
+new Chart(ctxMain, chartConfig);
+    </script>
+   </body>
+</html>
