@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Emails</title>
+        <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+        <link rel="icon" href="Logo.png.png" type="image/x-icon">
+  </head>
+  <style>
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  transition: background-color 0.5s, color 0.5s;
+}
+
+.light-mode {
+  background-color: #fff;
+  color: black;
+}
+
+.light-mode .nav-item,
+.light-mode .sub-item,
+.light-mode .icon {
+  color: black;
+}
+
+.dark-mode {
+  background-color: #000;
+  color: white;
+}
+
+.dark-mode .nav-item,
+.dark-mode .sub-item,
+.dark-mode .icon {
+  color: white;
+}
+
+.menu-dropdown {
+  position: absolute;
+  top: 50px;
+  flex-grow: 2;
+  left: 25%;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  width: 150px;
+  display: none;
+  z-index: 1000;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.menu-dropdown a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: black;
+}
+
+.menu-dropdown a:hover {
+  background-color: #f1f1f1;
+}
+
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: block;
+}
+
+.container {
+  display: flex;
+}
+
+.sidebar {
+  width: 250px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #c5c5c5;
+  margin-left: 10px;
+  height: 100vh;
+}
+
+.sidebar .logo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.sidebar .logo img {
+  width: 50px;
+  margin-right: 20px;
+}
+
+.sidebar h2 {
+  color: #333;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.sidebar ul li a i {
+  margin-right: 10px;
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 20px;
+}
+
+.user-icons {
+  margin-left: 20px;
+  margin-right: 10px;
+}
+
+.bs {
+  font: bold;
+  color: #535252;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+.menu-icon span {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.nav-links {
+  display: flex;
+}
+
+.nav-item {
+  margin-right: 20px;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+.nav-item:hover {
+  text-decoration: underline;
+}
+
+.right-icons {
+  display: flex;
+  align-items: flex-start;
+}
+
+.icon {
+  margin-left: 20px;
+  font-size: 18px;
+  color: black;
+  text-decoration: none;
+}
+
+.sub-header {
+  padding: 10px 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+.sub-item {
+  margin-right: 20px;
+  text-decoration: none;
+  color: #007bff;
+}
+
+.sub-item:hover {
+  text-decoration: underline;
+}
+
+.breadcrumbs {
+  margin-bottom: 20px;
+}
+
+.card-container {
+  display: flex;
+  margin-top: 10px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.email-container {
+    display: flex;
+    width: 100%;
+}
+
+.email-list {
+    width: 40%;
+    background-color: #fdfdfd;
+    border-right: 1px solid #ccc;
+    overflow-y: auto;
+}
+
+.email-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+
+}
+.email-item:hover{
+    background-color: #C0B9DB;
+}
+.email-item img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.email-item p {
+    margin: 3px 0;
+}
+
+.email-name {
+    font-weight: bold;
+}
+
+.email-subject {
+    font-size: 0.9em;
+    color: #666;
+}
+
+.email-preview {
+    font-size: 0.8em;
+    color: #999;
+}
+
+.email-content {
+    width: 60%;
+    background-color: #d1c4e9;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.5);
+}
+
+.email-header {
+    margin-bottom: 20px;
+}
+
+.email-subject-content {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.email-name-content {
+    color: #555;
+    margin-top: 5px;
+}
+
+.email-body {
+    background-color: #e0e0e0;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    min-height: 250px;
+    font-size: 1.1em;
+}
+
+.email-actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.email-actions button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.email-actions button:hover {
+    background-color: #b39ddb;
+    color: #fff;
+}
+    </style>
+  <body class="light-mode">
+    <div class="container">
+      <div class="sidebar">
+        <div class="logo">
+          <img
+            src="Logo.png.png"
+            alt="Logo"
+          />
+        </div>
+        <ul>
+          <li><i class="bx bx-time-five"></i> Dashboard</li>
+          <li class="bs">Theme</li>
+          <li><i class="bx bx-color-fill"></i> Color</li>
+          <li><i class="bx bx-pencil"></i> Typography</li>
+          <li class="bs">Components</li>
+          <li><i class="bx bx-table"></i>Table</li>
+          <li><i class="bx bx-line-chart"></i>Chart</li>
+          <li><i class="bx bx-package"></i> Icons</li>
+          <li class="bs">Pages</li>
+          <li><i class="fas fa-users"></i> Users pages</li>
+          <li><i class="fas fa-question-circle"></i> Help</li>
+        </ul>
+      </div>
+      <div class="main-content">
+        <header class="header">
+          <div class="menu-icon">
+            <a href="#" class="icon" id="menuToggle"
+              ><i class="fa fa-bars"></i
+            >
+            <div id="menuDropdown" class="menu-dropdown hidden">
+              <a href="#" class="menu-item"
+                ><i class="fa fa-user-plus"></i> Add Account</a
+              >
+              <a href="#" class="menu-item"
+                ><i class="fa fa-sign-out"></i> Log Out</a
+              >
+              <a href="#" class="menu-item"
+                ><i class="fa fa-tachometer"></i> New Dashboard</a
+              ></a>
+            </div>
+          </div>
+          <div class="right-icons">
+            <a href="#" class="icon"><i class="fa fa-envelope"></i></a>
+            <a href="#" class="icon" id="themeToggle"
+              ><i id="themeIcon" class="fa fa-moon"></i
+            ></a>
+            <a href="#" class="icon"><i class="fa fa-user"></i></a>
+          </div>
+        </header>
+        <div class="sub-header">
+            <a href="#" class="sub-item">Emails</a>
+          </div>
+    <div class="email-container">
+        <div class="email-list">
+            <div class="email-item" onclick="showEmailContent('Email Content for Example User requested to delete her account')">
+                <img src="profile.png" alt="Profile Picture">
+                <div>
+                    <p class="email-name">Name</p>
+                    <p class="email-subject">Subject</p>
+                    <p class="email-preview">Email content</p>
+                </div>
+            </div>
+            <div class="email-item" onclick="showEmailContent('Another email content')">
+                <img src="profile3.png" alt="Profile Picture">
+                <div>
+                    <p class="email-name">Name</p>
+                    <p class="email-subject">Subject</p>
+                    <p class="email-preview">Email content</p>
+                </div>
+            </div>
+            <div class="email-item" onclick="showEmailContent('Another email content')">
+                <img src="profile4.png" alt="Profile Picture">
+                <div>
+                    <p class="email-name">Name</p>
+                    <p class="email-subject">Subject</p>
+                    <p class="email-preview">Email content</p>
+                </div>
+            </div>
+            <div class="email-item" onclick="showEmailContent('Another email content')">
+                <img src="profile5.png" alt="Profile Picture">
+                <div>
+                    <p class="email-name">Name</p>
+                    <p class="email-subject">Subject</p>
+                    <p class="email-preview">Email content</p>
+                </div>
+            </div>
+            <div class="email-item" onclick="showEmailContent('Another email content')">
+                <img src="profile6.png" alt="Profile Picture">
+                <div>
+                    <p class="email-name">Name</p>
+                    <p class="email-subject">Subject</p>
+                    <p class="email-preview">Email content</p>
+                </div>
+            </div>
+            <div class="email-item" onclick="showEmailContent('Another email content')">
+                <img src="profile1.png" alt="Profile Picture">
+                <div>
+                    <p class="email-name">Name</p>
+                    <p class="email-subject">Subject</p>
+                    <p class="email-preview">Email content</p>
+                </div>
+            </div>
+            <div class="email-item" onclick="showEmailContent('Another email content')">
+                <img src="profile7.png" alt="Profile Picture">
+                <div>
+                    <p class="email-name">Name</p>
+                    <p class="email-subject">Subject</p>
+                    <p class="email-preview">Email content</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="email-content">
+            <div class="email-header">
+                <p class="email-subject-content">Email Subject</p>
+                <p class="email-name-content">Name to me</p>
+            </div>
+            <div class="email-body" id="email-body">
+            </div>
+            <div class="email-actions">
+                <button onclick="replyEmail()">Reply</button>
+                <button onclick="deleteEmail()">Delete</button>
+            </div>
+        </div>
+    <script>
+              const toggleMenu = () => {
+  const menu = document.querySelector(".menu-icon");
+  menu.classList.toggle("active");
+};
+
+const themeToggle = document.getElementById("themeToggle");
+const body = document.body;
+const themeIcon = document.getElementById("themeIcon");
+
+themeToggle.addEventListener("click", function () {
+  body.classList.toggle("dark-mode");
+  body.classList.toggle("light-mode");
+
+  // تغییر آیکون بین حالت روز و شب
+  if (body.classList.contains("dark-mode")) {
+    themeIcon.classList.remove("fa-moon");
+    themeIcon.classList.add("fa-sun");
+  } else {
+    themeIcon.classList.remove("fa-sun");
+    themeIcon.classList.add("fa-moon");
+  }
+});
+
+const menuToggle = document.getElementById("menuToggle");
+const menuDropdown = document.getElementById("menuDropdown");
+
+menuToggle.addEventListener("click", function () {
+  menuDropdown.classList.toggle("visible");
+  menuDropdown.classList.toggle("hidden");
+});
+        function showEmailContent(content) {
+    document.getElementById('email-body').textContent = content;
+}
+
+function replyEmail() {
+    alert("Reply to the email!");
+}
+
+function deleteEmail() {
+    alert("Email deleted!");
+}
+
+    </script>
+</body>
+</html>
+
+        
