@@ -390,6 +390,9 @@ ul {
 }
 .comment input {
   width: 90%;
+  border: none;
+  height: 40px;
+  outline: none;
 }
 .create {
   width: 30%;
