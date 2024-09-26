@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Profile</title>
+    <link rel="stylesheet" href="src/styles.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      .edit-column-2 {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        width: 100%;
+      }
+      .profile-pic {
+        margin-right: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        padding: 10px;
+        border-radius: 50%;
+      }
+
+      .profile-pic img {
+        width: 250px;
+        height: 250px;
+        object-fit: cover;
+        border-radius: 20px;
+
+        margin-bottom: 10px;
+        cursor: pointer;
+      }
+
+      .profile-pic p {
+        font-weight: bold;
+        color: #333;
+      }
+      .form-fields {
+        width: 100%;
+      }
+
+      h2 {
+        text-align: left;
+        margin-bottom: 20px;
+        font-family: Arial, sans-serif;
+        color: #333;
+      }
+
+      .input-group {
+        margin-bottom: 15px;
+      }
+
+      .input-group label {
+        display: block;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 5px;
+      }
+      .profile-form {
+        display: flex;
+        width: 60%;
+      }
+
+      .input-group input,
+      .input-group textarea,
+      .input-group select {
+        width: 100%;
+        padding: 10px;
+        border: 2px solid;
+        border-radius: 4px;
+        font-size: 14px;
+        border-image-slice: 1;
+        border-image-source: linear-gradient(45deg, #8e44ad, #3498db);
+      }
+
+      textarea {
+        resize: none;
+        height: 60px;
+      }
+
+      .button-group {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .cancel-btn,
+      .save-btn {
+        padding: 10px 20px;
+        margin: auto;
+        align-items: center;
+        border: 2px solid;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+
+        border-image-slice: 1;
+        border-image-source: linear-gradient(45deg, #8e44ad, #3498db);
+      }
+
+      .cancel-btn:hover,
+      .save-btn:hover {
+        background-color: #789afa;
+      }
+      .profile-pic label i {
+        position: absolute;
+        color: white;
+      }
+      @media (max-width: 768px) {
+        .edit-column-2 {
+          flex-direction: column;
+          align-items: center;
+        }
+        .profile-form {
+          flex-direction: column;
+        }
+
+        .profile-pic {
+          margin-right: 0;
+          margin-bottom: 20px;
+        }
+
+        .cancel-btn,
+        .save-btn {
+          width: 30%;
+          margin-bottom: 10px;
+        }
+        .profile-form {
+          width: 80%;
+        }
+        .profile-pic img {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid-container-prof">
+      <div class="column column-1">
+        <div class="sidebar">
+          <div class="top">
+            <div class="logo">
+              <img
+                src="images/Screenshot__356_-removebg-preview.png"
+                alt="logo"
+              />
+              <span>WorldWave</span>
+            </div>
+          </div>
+          <ul class="prof-sidebar">
+            <li>
+              <a href="dashboard.html" class="active-page">
+                <i class="bx bxs-home"></i>
+                <span class="nav-item">Dashboard</span>
+              </a>
+              <span class="tooltip">Dashboard</span>
+            </li>
+            <li>
+              <a href="">
+                <i class="bx bx-search-alt"></i>
+                <span class="nav-item">Search</span>
+              </a>
+              <span class="tooltip">Search</span>
+            </li>
+            <li>
+              <a href="">
+                <i class="bx bx-heart"></i>
+                <span class="nav-item">Notification</span>
+              </a>
+              <span class="tooltip">Notifictions</span>
+            </li>
+            <li>
+              <a href="">
+                <i class="bx bx-plus-circle"></i>
+                <span class="nav-item">Create</span>
+              </a>
+              <span class="tooltip">Create</span>
+            </li>
+            <li>
+              <a href="">
+                <i
+                  ><img
+                    src="images/user.jpg"
+                    alt="profile pic"
+                    class="profile"
+                  />
+                </i>
+                <span class="nav-item">Profile</span>
+              </a>
+              <span class="tooltip">Profile</span>
+            </li>
+            <li>
+              <a href="">
+                <i class="bx bx-menu last-item"></i>
+                <span class="nav-item">More</span>
+              </a>
+              <span class="tooltip">More</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="column column-2 edit-column-2">
+        <div class="profile-pic">
+          <label for="profile-input">
+            <i class="bx bx-camera"></i>
+            <img
+              id="profile-image"
+              src="images/user.jpg"
+              alt="Profile Picture"
+            />
+          </label>
+          <input
+            type="file"
+            id="profile-input"
+            accept="image/*"
+            style="display: none"
+          />
+          <p>Emma.shining12</p>
+        </div>
+        <form class="profile-form">
+          <div class="form-fields">
+            <h2>Edit Profile</h2>
+
+            <div class="input-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" value="Emma" />
+            </div>
+
+            <div class="input-group">
+              <label for="username">Username</label>
+              <input type="text" id="username" value="Emma.shining12" />
+            </div>
+
+            <div class="input-group">
+              <label for="bio">Bio</label>
+              <textarea id="bio">
+yesterday is a history, tomorrow is a mystery</textarea
+              >
+            </div>
+
+            <div class="input-group">
+              <label for="gender">Gender</label>
+              <select id="gender">
+                <option value="Female" selected>Female</option>
+                <option value="Male">Male</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+
+            <div class="input-group">
+              <label for="birthday">Birthday</label>
+              <input type="date" id="birthday" value="2005-12-06" />
+            </div>
+
+            <div class="button-group">
+              <button type="button" class="cancel-btn">Cancel</button>
+              <button type="submit" class="save-btn">Save</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="fixed-navbar">
+      <ul>
+        <li>
+          <a href="" class="active-page">
+            <i class="bx bxs-home"></i>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <i class="bx bx-heart"></i>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <i class="bx bx-plus-circle"></i>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <i
+              ><img src="images/user.jpg" alt="profile pic" class="profile" />
+            </i>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <i class="bx bx-moon"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <script src="src/script.js"></script>
+  </body>
+</html>

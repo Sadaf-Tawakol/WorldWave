@@ -16,6 +16,139 @@
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
+    <style>
+      /*follower/following section*/
+
+      .followers-following-container {
+        padding: 30px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        display: block;
+        box-sizing: border-box;
+        width: 60%;
+        height: 500px;
+        overflow-y: scroll;
+        position: absolute;
+
+        right: 0;
+      }
+
+      .followers-following-tabs {
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 20px;
+      }
+
+      .tab-btn {
+        padding: 10px 30px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        background: none;
+        border: none;
+        color: #333;
+      }
+
+      .tab-btn.active {
+        border: 2px solid transparent;
+        border-image: linear-gradient(45deg, #8e44ad, #3498db);
+        border-image-slice: 1;
+        padding: 5px 10px;
+        border-radius: 8px;
+      }
+
+      .search-box {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
+      .search-box input {
+        border: 2px solid #ccc;
+        border-radius: 20px;
+        padding: 10px;
+        width: 180px;
+        outline: none;
+      }
+
+      .search-box .search-btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        margin-left: -40px;
+      }
+
+      .followers-following-content {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+
+      .column-followers {
+        width: 45%;
+        margin-right: 10px;
+        position: relative;
+      }
+
+      .column-followers:last-child {
+        margin-right: 0;
+      }
+
+      .followers-list,
+      .following-list {
+        list-style: none;
+        padding: 0;
+      }
+
+      .followers-list li,
+      .following-list li {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 0;
+        border-bottom: 1px solid #eee;
+      }
+
+      .followers-list li img,
+      .following-list li img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      .follower-details,
+      .following-details {
+        flex-grow: 1;
+        padding-left: 10px;
+      }
+
+      .remove-btn {
+        padding: 5px 10px;
+        background-color: transparent;
+        border: 2px solid;
+        border-image: linear-gradient(45deg, #8e44ad, #3498db);
+        border-image-slice: 1;
+        border-radius: 3px;
+        cursor: pointer;
+      }
+
+      .following-gradient-cover,
+      .followers-gradient-cover {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: linear-gradient(45deg, #8e44ad, #3498db);
+        z-index: 2;
+      }
+
+      .followers-gradient-cover {
+        display: none;
+      }
+    </style>
   </head>
   <body>
     <div class="grid-container-prof">
@@ -90,7 +223,7 @@
             </div>
             <div class="flex-buttons">
               <i class="bx bx-camera"></i>
-              <button>Edit profile</button>
+              <a href="edit-profile.html"> <button>Edit profile</button></a>
             </div>
             <div class="sub-profile">
               <div id="prof-id">
@@ -163,5 +296,110 @@
         </li>
       </ul>
     </div>
+    <div class="followers-following-container">
+      <div class="followers-following-tabs">
+        <button class="tab-btn active" id="followers-tab">Followers</button>
+        <button class="tab-btn" id="following-tab">Following</button>
+      </div>
+
+      <div class="followers-following-content">
+        <div class="column-followers" id="followers-list">
+          <div class="followers-gradient-cover"></div>
+          <div class="search-box">
+            <input type="text" placeholder="search" />
+            <button class="search-btn">
+              <i class="fa fa-search"></i>
+            </button>
+          </div>
+          <ul class="followers-list">
+            <li>
+              <img src="Persian women.jpeg" alt="User 1" />
+              <div class="follower-details">
+                <p class="username">mi_na1</p>
+                <p class="fullname">Mina</p>
+              </div>
+              <button class="remove-btn">Remove</button>
+            </li>
+            <li>
+              <img src="Kimiya Hoseini.jpeg" alt="User 2" />
+              <div class="follower-details">
+                <p class="username">asal4</p>
+                <p class="fullname">Asal</p>
+              </div>
+              <button class="remove-btn">Remove</button>
+            </li>
+            <li>
+              <img src="download.jpeg" alt="User 3" />
+              <div class="follower-details">
+                <p class="username">Rm432</p>
+                <p class="fullname">Roya</p>
+              </div>
+              <button class="remove-btn">Remove</button>
+            </li>
+            <li>
+              <img src="download (1).jpeg" alt="User 4" />
+              <div class="follower-details">
+                <p class="username">ara57</p>
+                <p class="fullname">Asra</p>
+              </div>
+              <button class="remove-btn">Remove</button>
+            </li>
+          </ul>
+        </div>
+
+        <div class="column-followers" id="following-list">
+          <div class="following-gradient-cover"></div>
+          <div class="search-box">
+            <input type="text" placeholder="search" />
+            <button class="search-btn">
+              <i class="fa fa-search"></i>
+            </button>
+          </div>
+          <ul class="following-list">
+            <li>
+              <img src="download (2).jpeg" alt="User 1" />
+              <div class="following-details">
+                <p class="username">titi7</p>
+                <p class="fullname">Tina</p>
+              </div>
+              <button class="remove-btn">Unfollow</button>
+            </li>
+            <li>
+              <img src="download (2).jpeg" alt="User 1" />
+              <div class="following-details">
+                <p class="username">titi7</p>
+                <p class="fullname">Tina</p>
+              </div>
+              <button class="remove-btn">Unfollow</button>
+            </li>
+            <li>
+              <img src="download.jpeg" alt="User 2" />
+              <div class="following-details">
+                <p class="username">Rm432</p>
+                <p class="fullname">Roya</p>
+              </div>
+              <button class="remove-btn">Unfollow</button>
+            </li>
+            <li>
+              <img src="Persian women.jpeg" alt="User 3" />
+              <div class="following-details">
+                <p class="username">mi_na1</p>
+                <p class="fullname">Mina</p>
+              </div>
+              <button class="remove-btn">Unfollow</button>
+            </li>
+            <li>
+              <img src="Kimiya Hoseini.jpeg" alt="User 4" />
+              <div class="following-details">
+                <p class="username">asal4</p>
+                <p class="fullname">Asal</p>
+              </div>
+              <button class="remove-btn">Unfollow</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script src="src/script.js"></script>
   </body>
 </html>
