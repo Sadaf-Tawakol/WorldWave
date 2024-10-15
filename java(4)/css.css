@@ -1,0 +1,341 @@
+:root {
+    --gradient-primary-color1: #c3a1ca; /* the main gradient */
+    --gradient-primary-color2: #5567a9; /* the main gradient */
+    --gradient-secondry-color1: #26415c; /* used for form inputs*/
+    --gradient-secondry-color2: #fc00bd; /* used for form inputs*/
+    --purple-color: #a5678e; /* used for buttons*/
+    --grey: #c0b9db; /*input fill*/
+    --blue-color: #7facd6;
+    --soft-purple: #e9b7d4;
+    --dark-blue: #33539e;
+  }
+  .primary-gradient {
+    background: linear-gradient(
+      to bottom,
+      var(--gradient-primary-color2) 0%,
+      var(--gradient-primary-color1) 100%
+    );
+  }
+  .secondary-gradient {
+    border: 3px solid;
+    border-image: linear-gradient(
+        45deg,
+        var(--gradient-secondry-color1),
+        var(--gradient-secondry-color2)
+      )
+      1;
+    /* Apply gradient */
+  }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    background-color: #ddd;
+  }
+  .logo img {
+    width: 2rem;
+    margin-right: 5px;
+  }
+  .user-img {
+    width: 25%;
+    border-radius: 100%;
+  }
+  .profile {
+    width: 22px;
+    border-radius: 100%;
+  }
+  .sidebar {
+    height: 100vh;
+    padding: 0.4rem 0.8rem;
+    border-right: 1px solid rgba(0, 0, 0, 0.288);
+    width: 250px;
+    position: fixed;
+  }
+  
+  .sidebar .top .logo {
+    display: flex;
+    height: 50px;
+    align-items: center;
+    pointer-events: none;
+  }
+  .user {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    
+    padding-bottom: 6px;
+    border: none;
+  }
+  .user .details-container {
+    display: flex;
+    gap: 40px;
+  }
+  .user .details-container div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 11px;
+  }
+  
+  .bold {
+    font-weight: 600;
+  }
+  
+  .sidebar ul li {
+    position: relative;
+    list-style-type: none;
+    height: 50px;
+    margin: 0.8rem auto;
+    line-height: 50px;
+  }
+  .sidebar ul li a {
+    color: var(--gradient-secondry-color1);
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 0.8rem;
+  }
+  .sidebar ul li a:hover {
+    background-color: aliceblue;
+    color: #26415c;
+  }
+  .sidebar ul li a i {
+    min-width: 50px;
+    text-align: center;
+    height: 50px;
+    border-radius: 12px;
+    line-height: 50px;
+  }
+  .grid-container {
+    display: grid;
+    grid-template-columns: 250px 2fr 0.5fr;
+  }
+  
+  .column {
+    text-align: center;
+    width: 100%;
+  }
+  
+  .tooltip {
+    opacity: 0;
+  }
+  .fixed-navbar ul {
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--grey);
+    padding: 20px;
+  }
+  .fixed-navbar ul li {
+    list-style-type: none;
+  }
+  .fixed-navbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+  }
+  img {
+    width: 100%;
+  }
+  
+  @media (max-width: 1250px) {
+    .nav-item {
+      position: absolute;
+      opacity: 0;
+    }
+    .user {
+      position: absolute;
+      opacity: 0;
+    }
+    .logo span {
+      position: absolute;
+      opacity: 0;
+    }
+    .sidebar {
+      width: 70px;
+      position: fixed;
+    }
+    .grid-container {
+      grid-template-columns: 70px 2fr;
+    }
+    .sidebar ul li {
+      margin-top: 30px;
+      position: relative;
+      margin-left: -5px;
+      transition: all 0.5s ease;
+    }
+    .sidebar ul {
+      padding-top: 10px;
+    }
+    .tooltip {
+      position: absolute;
+      left: 65px;
+      bottom: 0px;
+      background-color: #7facd6b4;
+      padding: 3px 20px;
+      border-radius: 10px;
+      opacity: 0;
+      transition: all 0.2s ease;
+    }
+    .sidebar ul li:hover .tooltip {
+      opacity: 1;
+    }
+    .column-3 {
+      position: absolute;
+      opacity: 0;
+    }
+  }
+  @media (max-width: 760px) {
+    .fixed-navbar {
+      opacity: 1;
+      transition: all 0.2 + s ease;
+    }
+    .column-1 {
+      position: absolute;
+      opacity: 0;
+      border: none;
+    }
+    .sidebar {
+      opacity: 0;
+      position: absolute;
+      border: none;
+    }
+    .grid-container {
+      grid-template-columns: 2fr;
+    }
+  }
+
+
+  .user-grid{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    margin-top: 3%;
+    margin-left:24% ;
+  }
+
+  .user-row{
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom:20px;
+
+  }
+
+  .user-card{
+    background-color: #dcd6ff;
+    text-align: center;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 280px;
+    height:280px;
+  
+  }
+
+  .user-card img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+
+  .user-card p {
+    font-size: 14px;
+    color: #6b6b6b;
+  }
+
+  .header{
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    padding: 10px 20px;
+  }
+
+  .header-icons{
+    display:flex;
+    justify-content:right;
+    align-items:center;
+    gap: 20px;
+  }
+
+  .icon{
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+  }
+
+  .icons-container{
+    float: right;
+    margin-right: 30px;
+  }
+  
+  .notification-icon{
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    z-index: 1000;
+    margin-right: 8%;
+    gap: 20px;
+  }
+
+  .back{
+    gap: 10px;
+  }
+
+  .user-actions{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5%;
+  }
+
+  .remove-button{
+    background-color: #7facd6;
+    color: white;
+    border: none;
+    border-radius:5px;
+    cursor:pointer ;
+    margin-top: 40px;
+  }
+
+  .remove-button:hover{
+    background-color:#5567a9;
+  }
+
+  .button-container{
+    margin-top: 30px;
+  }
+
+/*DARK MODE SECTION*/
+body.dark-mode{
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.sidebar.dark-mode{
+    background-color: #1e1e1e;
+}
+
+.user-card.dark-mode{
+    background-color: #1c1c1c;
+    border: 1px solid #333;
+}
+
+.fixed-navbar.dark-mode{
+    background-color: #1e1e1e;
+
+}
+
+body.dark-mode .sidebar{
+    border-right: 1px solid white;
+}
+/*DARK MODE SECTION END*/

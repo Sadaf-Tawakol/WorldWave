@@ -1,0 +1,20 @@
+  document.querySelector('.add-button').addEventListener('click', function(){
+    const userGrid = document.querySelector('.user-grid');
+    const newUserCard = `
+      <div class="user-card">
+        <img src="new-user-image.jpg" alt="New User">
+        <p>@newuser<br>New User</p>
+        <button class="remove-button">Remove</button>
+      </div>`;
+    userGrid.innerHTML += newUserCard;
+
+
+    document.querySelectorAll('.remove-button').forEach(button => {
+        button.addEventListener('click', function(){
+            const card = this.closest('.user-card');
+            if (card) {
+                card.remove();
+            }
+        });
+    });
+});
